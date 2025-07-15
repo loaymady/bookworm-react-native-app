@@ -5,6 +5,8 @@ interface User {
   id: string;
   username: string;
   email: string;
+  profileImage: string;
+  createdAt: string;
 }
 
 interface AuthStore {
@@ -22,6 +24,7 @@ interface AuthStore {
     password: string
   ) => Promise<{ success: boolean; error?: string }>;
   checkAuth: () => Promise<void>;
+  logout: () => Promise<void>;
 }
 
 export const useAuthStore = create<AuthStore>((set) => ({
@@ -116,5 +119,11 @@ export const useAuthStore = create<AuthStore>((set) => ({
     } finally {
       set({ isCheckingAuth: false });
     }
+  },
+
+  logout: async () => {
+    await AsyncStorage.removeItem("token");
+    await AsyncStorage.removeItem("user");
+    set({ token: null, user: null });
   },
 }));
