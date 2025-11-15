@@ -13,6 +13,10 @@ It runs on **Android** and **iOS**, offering a smooth, responsive, and visually 
 
 👉 [Download the latest Android APK Release](https://github.com/loaymady/bookworm-react-native-app/releases)
 
+<div align="center">
+  <img src="./bookworm-app-demo.webp" alt="Bookworm App" width="300"/>
+</div>
+
 ---
 
 ## ✨ Features
